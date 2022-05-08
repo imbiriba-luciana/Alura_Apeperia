@@ -1,3 +1,59 @@
+/* FORMATO PARA TRAZER AS INFORMAÇÕES DE CORES PARA DENTRO DO CSS ABAIXO:
+--nome-da-variavel: valor; 
+ALÉM DISSO VAI REQUERER UM SELETOR, QUE NO EXEMPLO SERÁ O ":root".
+DEPOIS AO LONGO DO CÓDIGO SERÁ SÓ NECESSÁRIO DIZER "var()",
+COM O NOME DA COR ABAIXO (Ex.: --branco)*/
+
+:root { 
+/*seletor root porque é mais forte que se usasse o próprio HTML.
+É como se o ROOT fosse o HTML, porém mais específico.
+E isso é importante para não sobrescrever o código*/
+    --branco: #FFF;
+    --azul-claro: #DFE3E5;
+    --vermelho-forte: #B72E2E;
+    --cinza-escuro: #4F4C4C;
+    --cinza-claro: #F7F4F4;
+    --cinza-medio: #D9D9D9;
+    
+    --fonte-link: #0084FF;
+    --fonte-cinza: #666;
+    --borda-cabecalho-mobile: #103D4A;
+    --bg-rodape: #333;
+    --bg-chamada-mobile: #00161C;
+
+    --planos-cartao-start: #56CCF2;
+    --planos-cartao-ultra: #B04CD9;
+    --planos-cartao-mega: #E33B3B;
+
+    --montserrat: 'Montserrat', sans-serif;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    padding-right: 6%;
+    padding-left: 6%;
+}
+
+.botao {
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box; 
+    /*pra dizer que o tamanho do elemento vai ser 100% do total que ele tem,
+    e a altura máxima vai ser 50%, 
+    independente de padding ou border*/
+    padding: 1rem 2rem;
+    border: 1px solid var(--branco);
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        padding-left: calc((100% - 940px)/2);
+        padding-right: calc((100% - 940px)/2);
+    }
 }

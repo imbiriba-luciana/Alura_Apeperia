@@ -1,5 +1,5 @@
 .cabecalho {
-    color: #FFF;
+    color: var(--branco);
 
     width: 100%;
 
@@ -12,7 +12,7 @@
     padding-top: .75rem;
     padding-bottom: .75rem;
 
-    border-bottom: 1px solid #103D4A;
+    border-bottom: 1px solid var(--borda-cabecalho-mobile);
 
     position: absolute;
 }
@@ -30,7 +30,19 @@
 
     display: inline-block;
 
-    margin-right: .7rem;
-    margin-bottom: 1.25rem;
+    margin-right: .7rem; 
+    margin-bottom: 1.25rem; 
+    /* o EM é o tamanho relativo a propriedade font-size da tag mãe (o "e" de "ephemerol", que quer dizer variável)*/
+    /* Já o REM é o tamanho relativo a propriedade font-size da tag raiz do código, que é a de maior hierarquiva, portanto a própria tag HTML (o "r" de "'root' ephemerol", ou seja, variável em relação ao valor raiz)*/
     margin-left: .7rem;
 }
+
+@media screen and (min-width: 1024px) {
+    .cabecalho {
+        flex-direction: row;
+        justify-content: space-between;
+        border: none;
+    }
+}
+
+

@@ -1,19 +1,19 @@
-.chamada  {
+.chamada {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    color: #FFF;
+    color: var(--branco);
     text-align: center;
     
-    background-color: #00161C;
+    background-color: var(--bg-chamada-mobile);
 
     padding-top: 12.25rem;
     padding-bottom: 2.5rem;
 }
 
-.chamada__titulo {
-    font-family: 'Montserrat', serif;
+.chamada_titulo {
+    font-family: var(--montserrat);
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -21,13 +21,37 @@
     margin-bottom: 1.5rem;
 }
 
-.chamada__texto {
+.chamada_texto {
     font-size: 1.25rem;
     line-height: normal;
 
     margin: 0 auto 2.5rem;
 }
 
-.chamada__botao {
+.chamada_botao {
     width: 100%;
+}
+
+@media screen and (min-width:768px) { /*a partir de 610, a tela fica rosa*/
+    .chamada_texto {
+        max-width: 600px;
+    }
+}
+
+/* screen vai dizer que essa condição é pra dispositivos com tela.
+Por exemplo, não vai servir pra uma impressora*/
+/*ou "print and" que serviria na hora de imprimir um boleto.
+A tela seria escondida, e imprimiria só o boleto*/
+
+@media screen and (min-width: 1024px) {
+    .chamada {
+        background-image: url(../img/bg-intro.jpg);
+        background-size: cover;
+        padding-top: 8.25rem;
+    }
+}
+
+.chamada_titulo {
+    font-size: 3.25rem;
+    margin-bottom: 2rem;
 }
